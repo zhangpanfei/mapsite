@@ -18,4 +18,4 @@
 2. npm start 启动
 3. npm build 打包
 
-[介绍](https://zpfei.ink/259.html)
+[详情](https://zpfei.ink/259.html)
