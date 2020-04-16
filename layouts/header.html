@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=title%></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="<%=url('/imgs/favicon.ico')%>" rel="external nofollow" />
+	<link rel="stylesheet" type="text/css" href="<%=url('/vendor/bootstrap-3.3.7/css/bootstrap.min.css')%>">
+	<link rel="stylesheet" type="text/css" href="<%=url('/css/app.css')%>">
+	<%if(typeof(css)!='undefined'){%><link rel="stylesheet" type="text/css" href="<%=url(`/css/${css}.css`)%>"><%}%>
+</head>
+<body>
+<div id="root" class="container-fluid">
+	<div class="row navi">
+		<div class="navi-body">
+			<div class="col-sm-3 logo">
+				<a href="<%=link('/')%>"><img src="<%=url('/imgs/1.jpg')%>" alt=""></a>
+			</div>
+			<div class="col-sm-7 links-body">
+				<div>
+					<ul class="menus">
+						<% for(let i in navi) { %>
+						<li>
+							<a href="<%=navi[i].link%>"><%=navi[i].name%></a>
+						</li>
+						<% } %>
+					</ul>
+					
+				</div>
+			</div>
+			<div class="col-sm-2 lang">
+				<a href="<%=link(route)%>"><div class="lang-zh<%=lang==='zh_CN'?' lang-active':''%>">中</div></a>
+				<a href="<%=link(route)%>?lang=en_US"><div class="lang-en<%=lang==='en_US'?' lang-active':''%>">EN</div></a>
+			</div>
+		</div>
+	</div>
